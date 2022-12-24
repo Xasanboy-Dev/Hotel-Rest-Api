@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("head") %>
+    <style>
+        .select {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+    </style>
+
+    <body>
+        <table class="table table-primary table-striped" style="border: 2px solid black;">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Lastname</th>
+                    <th scope="col table-primary">Email</th>
+                    <th scope="col">Skill</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <% for(let r in data.rows){%>
+                <tbody border>
+                    <th>
+                        <%= data.rows[r].id%>
+                    </th>
+                    <td>
+                        <%= data.rows[r].name%>
+                    </td>
+                    <td>
+                        <%= data.rows[r].lastname%>
+                    </td>
+                    <td>
+                        <%= data.rows[r].email%>
+                    </td>
+                    <td>
+                        <%= data.rows[r].skill%>
+                    </td>
+                    <td>
+                        <%= data.rows[r].gender%>
+                    </td>
+                    <td>
+                        <%= data.rows[r].phone%>
+                    </td>
+                    <td>
+                        <i class="bi bi-trash-fill">
+                            <%= data.rows[r].id%>
+                        </i>
+                    </td>
+                </tbody>
+                <%}%>
+        </table>
+        <div class="select">
+            <a href="/users/register"><button class="rounded fs-3 bg-primary">Register</button></a>
+            <a href="/users/login"><button class="rounded bg-warning fs-3">Login</button></a>
+        </div>
+    </body>
+
+</html>
